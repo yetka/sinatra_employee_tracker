@@ -1,0 +1,20 @@
+<h3>Add New Division</h3>
+
+<form action="/divisions" method="post">
+  <div class="form-group">
+    <label class="form-label" for='name'>Assign a name to your division:</label>
+    <input class="form-control" id='name' name='name' type="text">
+    <button type="submit" class="button btn">Add Division</button>
+  </div>
+</form>
+
+<% if @divisions.any?() %>
+<h1>Update/Delete Division:</h1>
+<ul>
+  <% @divisions.each do |division| %>
+  <li><a href="/divisions/<%= division.id() %>/edit"><%= division.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no divisions yet!</p>
+<% end %>

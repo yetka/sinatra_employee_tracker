@@ -1,0 +1,12 @@
+<h3> Add Employee to any Division:</h3>
+  <form action="/employees" method="post">
+    <label for="division_id">Select a Division</label>
+    <select id='division_id' name='division_id' type='text'>
+      <% @divisions.each() do |division| %>
+        <option value="<%= division.id()%>"> <%= division.name() %> </option>
+      <% end %>
+    </select>
+    <label for="name">Name of the Employee:</label>
+    <input id="name" name="name" type="text">
+    <button type="submit">Add Employee  </button>
+  </form>
